@@ -1,0 +1,20 @@
+<h1>Add Order</h1>
+
+<form action="add_record_order/" method="post">
+{% csrf_token %}
+Order_Id:<br>
+<input name="order_id">
+<br><br>
+Assigned To:<br>
+<input name="assigned_to">
+<br><br>
+    <br><br>
+Given By:<br>
+<input name="given_by">
+<br><br>
+    <br><br>
+Bill:<br>
+<input name="bill">
+<br><br>
+<input type="submit" value="Submit">
+</form>

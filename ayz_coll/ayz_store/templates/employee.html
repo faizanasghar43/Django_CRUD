@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap"
+          rel="stylesheet">
+
+    <title>Employee</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="static/css/bootstrap.min.css" rel="stylesheet">
+    <link href="static/css/table_o.css" rel="stylesheet">
+    <!--
+        -->
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="static/css/fontawesome.css">
+    <link rel="stylesheet" href="static/css/templatemo-sixteen.css">
+    <link rel="stylesheet" href="static/css/owl.css">
+</head>
+<!-- Bootstrap core CSS -->
+<header class="">
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand" href="{% url 'index' %}"><h2>AYZ <em>COLLECTION</em></h2></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                    aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="{% url 'index' %}">Home
+                            <span class="sr-only">(current)</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'employee' %}">Employees</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'orders_' %}">Orders</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'customer' %}">Customers</a>
+                    </li>
+
+                    <!--              drodwn-->
+                    <!-- Example single danger button -->
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+
+
+<section>
+    <!--for demo wrap-->
+    <h1>Fixed Table header</h1>
+    <div class="tbl-header">
+        <table cellpadding="0" cellspacing="0" border="40">
+            <thead>
+            <tr>
+                <th>Number</th>
+                <th>Employee_ID</th>
+                <th>Name</th>
+                <th>Salary</th>
+            </tr>
+            </thead>
+        </table>
+    </div>
+    <div class="tbl-content">
+        <table cellpadding="0" cellspacing="0" border="0">
+            {% for x in my_employees %}
+            <tr>
+                <td>{{ x.id }}</td>
+                <td>{{ x.emp_id }}</td>
+                <td>{{ x.name }}</td>
+                <td>{{ x.salary }}</td>
+                <td><a href="employee/delete_emp/{{ x.id }}" class="btn btn-primary btn-lg active"
+              role="button" aria-pressed="true">delete</a></td>
+            </tr>
+            {% endfor %}
+        </table>
+        <p>
+           <a href="employee/add_emp/" class="btn btn-primary btn-lg active"
+              role="button" aria-pressed="true">Add Employee</a>
+        </p>
+    </div>
+</section>
+</body>
+
+</html>

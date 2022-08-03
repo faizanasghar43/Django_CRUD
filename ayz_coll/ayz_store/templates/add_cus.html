@@ -1,0 +1,12 @@
+<h1>Add Customer</h1>
+
+<form action="add_record_cus/" method="post">
+{% csrf_token %}
+Name:<br>
+<input name="name">
+<br><br>
+id:<br>
+<input name="cus_id">
+<br><br>
+<input type="submit" value="Submit">
+</form>
